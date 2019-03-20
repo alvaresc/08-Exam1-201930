@@ -79,7 +79,7 @@ def problem4(point1, point2, n, window):
       :type window:  rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
@@ -100,7 +100,6 @@ def problem4(point1, point2, n, window):
     for k in range(n):
         point3 = rg.Point(p3x, p3y)
         point3.fill_color = point1.fill_color
-
         point3.attach_to(window)
 
         p3x = p3x + (point2.x - point1.x) / ((2*n)+1)
