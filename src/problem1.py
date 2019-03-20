@@ -3,13 +3,13 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Sam Alvares.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Right-click on the  src  folder and
+# DONE: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 # -----------------------------------------------------------------------------
@@ -121,6 +121,27 @@ def problem1(circle, rectangle, color, length, window):
     # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    #problem1(circle, rectangle, color, length, window)
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    c_center = circle.center
+    r_center = rectangle.get_center()
+
+    line1 = rg.Line(c_center,r_center)
+    line1.color = color
+    line1.thickness = circle.outline_thickness
+    line1.attach_to(window)
+
+    mid_line_1 = line1.get_midpoint()
+    line2_start = rg.Point(mid_line_1.x,(mid_line_1.y + (length/2)))
+    line2_end = rg.Point(mid_line_1.x, (mid_line_1.y - (length / 2)))
+    line2 = rg.Line(line2_start,line2_end)
+    line2.color = circle.fill_color
+    line2.thickness = (circle.outline_thickness + rectangle.outline_thickness)
+    line2.attach_to(window)
+
+    window.render()
 
 
 # -----------------------------------------------------------------------------
