@@ -67,14 +67,14 @@ def test_factor_sum():
     print()
 
     print('Test 4:')
-    expected = 1
+    expected = 9
     actual = factor_sum(10)
     print('Expected:', expected)
     print('Actual:  ', actual)
     print()
 
     print('Test 5:')
-    expected = 9
+    expected = 5
     actual = factor_sum(13)
     print('Expected:', expected)
     print('Actual:  ', actual)
