@@ -3,11 +3,10 @@ Exam 1, problem 4.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Sam Alvares.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
-
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -84,6 +83,30 @@ def problem4(point1, point2, n, window):
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
+
+    point1.attach_to(window)
+    point2.attach_to(window)
+    p3x = point1.x + (point2.x - point1.x)/((2*n)+1)
+    p3y = point1.y + (point2.y - point1.y)/((2*n)+1)
+
+    for k in range(n):
+        point3 = rg.Point(p3x,p3y)
+        point3.fill_color = point2.fill_color
+        point3.attach_to(window)
+
+        p3x = p3x + (point2.x - point1.x) / ((2*n)+1)
+        p3y = p3y + (point2.y - point1.y) / ((2*n)+1)
+
+    for k in range(n):
+        point3 = rg.Point(p3x, p3y)
+        point3.fill_color = point1.fill_color
+
+        point3.attach_to(window)
+
+        p3x = p3x + (point2.x - point1.x) / ((2*n)+1)
+        p3y = p3y + (point2.y - point1.y) / ((2*n)+1)
+
+    window.render()
 
 
 # -----------------------------------------------------------------------------
